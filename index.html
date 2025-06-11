@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>יוסי ומירי - חתונה 5.6.26</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">יוסי ומירי</div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">בית</a></li>
+                    <li><a href="#details" class="nav-link">פרטי האירוע</a></li>
+                    <li><a href="#gifts" class="nav-link">מתנות</a></li>
+                    <li><a href="#directions" class="nav-link">הוראות הגעה</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="תפריט">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="slideshow-container">
+                <div class="slide active" style="background-image: linear-gradient(45deg, #f4f1e8, #e8dcc0);"></div>
+                <div class="slide" style="background-image: linear-gradient(135deg, #f0e68c, #daa520);"></div>
+                <div class="slide" style="background-image: linear-gradient(45deg, #fff8dc, #f5f5dc);"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1 class="hero-title">יוסי ומירי</h1>
+                    <p class="hero-subtitle">מתחתנים</p>
+                    <div class="wedding-date">5 ביוני 2026</div>
+                </div>
+                
+                <!-- Countdown Timer -->
+                <div class="countdown-container">
+                    <h2 class="countdown-title">הספירה לאחור לחתונה</h2>
+                    <div class="countdown" id="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">0</span>
+                            <span class="countdown-label">ימים</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">0</span>
+                            <span class="countdown-label">שעות</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">0</span>
+                            <span class="countdown-label">דקות</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">0</span>
+                            <span class="countdown-label">שניות</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Music Controls -->
+                <div class="music-controls">
+                    <button id="musicToggle" class="music-btn" aria-label="נגן/השתק מוזיקה">
+                        <span class="music-icon">🎵</span>
+                        <span class="music-text">מוזיקת רקע</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details -->
+    <section id="details" class="details-section">
+        <div class="container">
+            <h2 class="section-title">פרטי האירוע</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="detail-icon">📅</div>
+                    <h3>תاريخ</h3>
+                    <p>יום חמישי, 5 ביוני 2026</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">🕰️</div>
+                    <h3>שעה</h3>
+                    <p>19:00</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">🏛️</div>
+                    <h3>מקום</h3>
+                    <p>אולמי רויאל</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">📍</div>
+                    <h3>כתובת</h3>
+                    <p>רחוב הרצל 15, תל אביב</p>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="addToCalendar" class="btn btn--primary">
+                    📅 הוספה ליומן
+                </button>
+                <a href="https://chat.whatsapp.com/invite-link-here" target="_blank" class="btn btn--secondary">
+                    🚐 קבוצת WhatsApp להסעות
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gifts Section -->
+    <section id="gifts" class="gifts-section">
+        <div class="container">
+            <h2 class="section-title">מתנות וברכות</h2>
+            <div class="gifts-content">
+                <p class="gifts-intro">נשמח לקבל את ברכתכם החמה לקראת היום המיוחד שלנו</p>
+                
+                <div class="blessing-form">
+                    <h3>השאירו ברכה</h3>
+                    <form id="blessingForm">
+                        <div class="form-group">
+                            <input type="text" id="senderName" class="form-control" placeholder="השם שלכם" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="blessingText" class="form-control" rows="4" placeholder="הברכה שלכם..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary">שלח ברכה</button>
+                    </form>
+                </div>
+
+                <div class="blessings-display">
+                    <h3>ברכות שהתקבלו</h3>
+                    <div id="blessingsContainer" class="blessings-list">
+                        <div class="blessing-item">
+                            <div class="blessing-author">דוד וגלית</div>
+                            <div class="blessing-text">מזל טוב! אנו מאחלים לכם חיים מלאי אהבה, שמחה ובריאות. שתזכו לבנות בית נאמן בישראל!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Directions -->
+    <section id="directions" class="directions-section">
+        <div class="container">
+            <h2 class="section-title">הוראות הגעה</h2>
+            <div class="directions-content">
+                <div class="venue-info">
+                    <h3>אולמי רויאל</h3>
+                    <p>רחוב הרצל 15, תל אביב</p>
+                </div>
+                
+                <div class="directions-buttons">
+                    <a href="https://waze.com/ul/hd28k8v123" target="_blank" class="btn btn--primary direction-btn">
+                        🗺️ נווט עם Waze
+                    </a>
+                    <a href="https://maps.google.com/?q=הרצל+15+תל+אביב" target="_blank" class="btn btn--secondary direction-btn">
+                        📍 Google Maps
+                    </a>
+                </div>
+
+                <div class="parking-info">
+                    <h4>חניה</h4>
+                    <p>חניה זמינה בשטח האולם וברחובות הסמוכים</p>
+                </div>
+
+                <div class="photos-note">
+                    <h4>תמונות מהאירוע</h4>
+                    <p>קישור לגלריית התמונות מהחתונה יתווסף כאן לאחר האירוע</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 יוסי ומירי - כל הזכויות שמורות</p>
+        </div>
+    </footer>
+
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop>
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwTLIHR8Nm" type="audio/wav">
+    </audio>
+
+    <script src="app.js"></script>
+</body>
+</html>
