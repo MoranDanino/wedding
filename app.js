@@ -265,11 +265,11 @@ function initCalendarIntegration() {
     
     addToCalendarBtn.addEventListener('click', function() {
         const eventDetails = {
-            title: 'חתונת יוסי ומירי',
+            title: 'החתונה של מורן ואור',
             startDate: '20260605T190000',
             endDate: '20260606T020000',
-            location: 'אולמי רויאל, רחוב הרצל 15, תל אביב',
-            description: 'חתונת יוסי ומירי - אירוע מיוחד!'
+            location: 'Khai resort, השיטה 5, עמק חפר',
+            description: 'החתונה של מורן ואור - חתונת השנה!'
         };
         
         const googleCalendarUrl = createGoogleCalendarUrl(eventDetails);
