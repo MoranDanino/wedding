@@ -3,200 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> אור ומורן - מתחתנים 5.6.26</title>
+    <title>החתונה שלנו | [שם הכלה] ו[שם החתן]</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&family=Assistant:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script> <!-- אם תרצו להוסיף אייקונים -->
 </head>
 <body>
-    <!-- Navigation -->
+
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="nav-logo">אור ומורן</div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link active">בית</a></li>
-                    <li><a href="#details" class="nav-link">פרטי האירוע</a></li>
-                    <li><a href="#gifts" class="nav-link">מתנות</a></li>
-                    <li><a href="#directions" class="nav-link">הוראות הגעה</a></li>
-                </ul>
-                <button class="menu-toggle" aria-label="תפריט">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+        <div class="container nav-content">
+            <a href="#" class="nav-logo">[שם הכלה] & [שם החתן]</a>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link active">הבית</a></li>
+                <li><a href="#details" class="nav-link">פרטי האירוע</a></li>
+                <li><a href="#blessings" class="nav-link">ברכות</a></li>
+                <li><a href="#directions" class="nav-link">איך מגיעים</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <header id="hero" class="hero">
         <div class="hero-background">
             <div class="slideshow-container">
-                <div class="slide active" style="background-image: linear-gradient(45deg, #f4f1e8, #e8dcc0);"></div>
-                <div class="slide" style="background-image: linear-gradient(135deg, #f0e68c, #daa520);"></div>
-                <div class="slide" style="background-image: linear-gradient(45deg, #fff8dc, #f5f5dc);"></div>
+                <div class="slide active" style="background-image: url('IMG_4816.jpg');"></div>
+                <!-- ניתן להוסיף תמונות נוספות כאן -->
             </div>
         </div>
         <div class="hero-content">
-            <div class="container">
-                <div class="hero-text">
-                    <h1 class="hero-title"> אור ומורן</h1>
-                    <p class="hero-subtitle">מתחתנים</p>
-                    <div class="wedding-date">5 ביוני 2026</div>
-                </div>
-                
-                <!-- Countdown Timer -->
-                <div class="countdown-container">
-                    <h2 class="countdown-title">הספירה לאחור לחתונה</h2>
-                    <div class="countdown" id="countdown">
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="days">0</span>
-                            <span class="countdown-label">ימים</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="hours">0</span>
-                            <span class="countdown-label">שעות</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="minutes">0</span>
-                            <span class="countdown-label">דקות</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="seconds">0</span>
-                            <span class="countdown-label">שניות</span>
-                        </div>
-                    </div>
-                </div>
+            <h1 class="hero-title">[שם הכלה] ו[שם החתן]</h1>
+            <p class="hero-subtitle">מתחתנים</p>
+            <p class="wedding-date">יום חמישי, 5 ביוני 2026</p>
 
-                <!-- Music Controls -->
-                <div class="music-controls">
-                    <button id="musicToggle" class="music-btn" aria-label="נגן/השתק מוזיקה">
-                        <span class="music-icon">🎵</span>
-                        <span class="music-text">מוזיקת רקע</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Event Details -->
-    <section id="details" class="details-section">
-        <div class="container">
-            <h2 class="section-title">פרטי האירוע</h2>
-            <div class="details-grid">
-                <div class="detail-card">
-                    <div class="detail-icon">📅</div>
-                    <h3>תאריך</h3>
-                    <p>יום חמישי, 5 ביוני 2026</p>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-icon">🕰️</div>
-                    <h3>שעה</h3>
-                    <p>11:45</p>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-icon">🏛️</div>
-                    <h3>מקום</h3>
-                    <p>Kahi resort</p>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-icon">📍</div>
-                    <h3>כתובת</h3>
-                    <p>השיטה 5, עמק חפר</p>
+            <div class="countdown-container">
+                <h2 class="countdown-title">הספירה לאחור החלה...</h2>
+                <div id="countdown" class="countdown">
+                    <div class="countdown-item"><span id="days" class="countdown-number">0</span><span class="countdown-label">ימים</span></div>
+                    <div class="countdown-item"><span id="hours" class="countdown-number">0</span><span class="countdown-label">שעות</span></div>
+                    <div class="countdown-item"><span id="minutes" class="countdown-number">0</span><span class="countdown-label">דקות</span></div>
+                    <div class="countdown-item"><span id="seconds" class="countdown-number">0</span><span class="countdown-label">שניות</span></div>
                 </div>
             </div>
             
-            <div class="action-buttons">
-                <button id="addToCalendar" class="btn btn--primary">
-                    📅 הוספה ליומן
+            <div class="music-controls">
+                <button id="music-btn" class="music-btn">
+                    <span id="music-icon">🎵</span> השמע מוזיקה
                 </button>
-                <a href="https://chat.whatsapp.com/BK98IVP5pa0GtvaPKoLyww" target="_blank" class="btn btn--secondary">
-                    🚐 קבוצת WhatsApp להסעות
-                </a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Gifts Section -->
-    <section id="gifts" class="gifts-section">
-        <div class="container">
-            <h2 class="section-title">מתנות וברכות</h2>
-            <div class="gifts-content">
-                <p class="gifts-intro">נשמח לקבל את ברכתכם החמה לקראת היום המיוחד שלנו</p>
-                
-                <div class="blessing-form">
-                    <h3>השאירו ברכה</h3>
-                    <form id="blessingForm">
-                        <div class="form-group">
-                            <input type="text" id="senderName" class="form-control" placeholder="השם שלכם" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="blessingText" class="form-control" rows="4" placeholder="הברכה שלכם..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn--primary">שלח ברכה</button>
-                    </form>
+    <main>
+        <section id="details" class="details-section">
+            <div class="container">
+                <h2 class="section-title">פרטי האירוע</h2>
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <h3>תאריך</h3>
+                        <p>יום חמישי, 5 ביוני 2026</p>
+                    </div>
+                    <div class="detail-card">
+                        <h3>שעה</h3>
+                        <p>קבלת פנים וחופה: 11:45</p>
+                    </div>
+                    <div class="detail-card">
+                        <h3>מקום</h3>
+                        <p>Kahi resort, השיטה 5, עמק חפר</p>
+                    </div>
                 </div>
+                <div class="action-buttons">
+                    <a href="#" id="google-calendar-btn" class="btn btn--primary">הוספה ליומן גוגל</a>
+                </div>
+            </div>
+        </section>
 
-                <div class="blessings-display">
-                    <h3>ברכות שהתקבלו</h3>
-                    <div id="blessingsContainer" class="blessings-list">
-                        <div class="blessing-item">
-                            <div class="blessing-author">עומר הגרדן</div>
-                            <div class="blessing-text">מזל טוב! בגללכם נשארתי שעות נוספות בעבודה!</div>
-                        <div class="blessing-item">
-                            <div class="blessing-author"> אבי קוביה</div>
-                            <div class="blessing-text">מזל טוב! נרדמתי אז לא באתי!</div>
+        <section id="blessings" class="gifts-section">
+            <div class="container">
+                <h2 class="section-title">הברכה שלכם</h2>
+                <div class="gifts-content">
+                    <p class="gifts-intro">נשמח לקבל את ברכתכם החמה לקראת היום המיוחד שלנו</p>
+                    <form id="blessing-form" class="blessing-form">
+                        <h3>כתבו לנו ברכה</h3>
+                        <div class="form-group">
+                            <input type="text" id="blessing-name" class="form-control" placeholder="שמכם המלא" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="blessing-text" class="form-control" rows="4" placeholder="הברכה שלכם..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width">שליחת ברכה</button>
+                    </form>
+
+                    <div id="blessings-display" class="blessings-display" style="display: none;">
+                        <h3>קיר הברכות</h3>
+                        <div id="blessings-list" class="blessings-list">
+                            <!-- הברכות יוצגו כאן -->
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Directions -->
-    <section id="directions" class="directions-section">
-        <div class="container">
-            <h2 class="section-title">הוראות הגעה</h2>
-            <div class="directions-content">
-                <div class="venue-info">
-                    <h3>Kahi resort</h3>
-                    <p>השיטה 5, עמק חפר </p>
-                </div>
-                
-                <div class="directions-buttons">
-                    <a href="https://waze.com/ul/hsvbb619mk" target="_blank" class="btn btn--primary direction-btn">
-                        🗺️ נווט עם Waze
-                    </a>
-                    <a href="https://maps.app.goo.gl/2Ahd7VewVQ2xxGRdA" target="_blank" class="btn btn--secondary direction-btn">
-                        📍 Google Maps
-                    </a>
-                </div>
-
-                <div class="parking-info">
-                    <h4>חניה</h4>
-                    <p>חניה זמינה בשטח האולם וברחובות הסמוכים</p>
-                </div>
-
-                <div class="photos-note">
-                    <h4>תמונות מהאירוע</h4>
-                    <p>קישור לגלריית התמונות מהחתונה יתווסף כאן לאחר האירוע</p>
+        <section id="directions" class="directions-section">
+            <div class="container">
+                <h2 class="section-title">איך מגיעים?</h2>
+                <div class="directions-content">
+                    <div class="venue-info">
+                        <h3>Kahi resort</h3>
+                        <p>השיטה 5, עמק חפר</p>
+                    </div>
+                    <div class="directions-buttons">
+                        <a href="https://waze.com/ul?ll=32.33963000,34.89885000&navigate=yes" target="_blank" class="btn btn--secondary direction-btn">ניווט עם Waze</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Kahi+resort+emek+hefer" target="_blank" class="btn btn--secondary direction-btn">ניווט עם Google Maps</a>
+                    </div>
+                    <div class="parking-info">
+                        <h4>חניה</h4>
+                        <p>חניה זמינה בשטח האולם וברחובות הסמוכים</p>
+                    </div>
+                    <div class="photos-note">
+                        <h4>תמונות מהאירוע</h4>
+                        <p>קישור לגלריית התמונות מהחתונה יתווסף כאן לאחר האירוע</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 אור ומורן - כל הזכויות שמורות</p>
-        </div>
+        <p>&copy; 2026 | [שם הכלה] ו[שם החתן] | נבנה באהבה ❤️</p>
     </footer>
 
-    <!-- Audio Element -->
-    <audio id="backgroundMusic" loop>
-        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwTLIHR8Nm" type="audio/wav">
+    <audio id="background-music" loop>
+        <source src="3e0fae7e-95e3-4d09-97de-095c4d43485f.mp3" type="audio/mpeg">
+        הדפדפן שלך אינו תומך באלמנט האודיו.
     </audio>
 
     <script src="app.js"></script>
