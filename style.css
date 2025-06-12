@@ -110,7 +110,7 @@ body {
     justify-content: center;
     overflow: hidden;
     padding-top: 60px; /* Space for navbar */
-    background-color: transparent;
+    background-color: var(--wedding-champagne);
 }
 
 .hero-background {
