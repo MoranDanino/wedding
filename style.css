@@ -63,21 +63,12 @@ body {
     overflow: hidden;
 }
 
-.sparkle-background {
-    position: absolute;
-    top: 0; left: 0; width: 100vw; height: 100vh;
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
-}
-
 .invitation-animation {
-    position: relative;
-    z-index: 2;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 .invitation-book {
@@ -116,11 +107,14 @@ body {
     box-shadow: 0 4px 24px rgba(194, 163, 98, 0.15);
     width: 220px;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .invitation-page.right {
     border-right: 2px solid #e2c799;
     align-items: flex-start;
+    justify-content: center;
 }
 
 .hero-title {
@@ -129,6 +123,8 @@ body {
     margin-bottom: 12px;
     font-weight: 600;
     letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
 }
 
 .countdown-container {
@@ -139,13 +135,18 @@ body {
     border-radius: 12px;
     padding: 10px 18px;
     box-shadow: 0 2px 8px rgba(194, 163, 98, 0.10);
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     direction: rtl;
+    text-align: center;
+    width: 100%;
 }
 
 .countdown-label {
     font-weight: 500;
     color: #bfa76a;
+    margin-left: 8px;
 }
 
 .countdown-number {
@@ -157,10 +158,15 @@ body {
     margin: 0 0 10px 0;
     font-size: 1.1rem;
     color: #7a5c2e;
+    text-align: center;
+    width: 100%;
 }
 
 .music-controls {
     margin-top: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .music-btn {
@@ -180,120 +186,4 @@ body {
 }
 
 .section-title {
-    font-size: 2rem;
-    color: #bfa76a;
-    margin-bottom: 24px;
-    text-align: center;
-    font-weight: 600;
-}
-
-.details-section, .directions-section {
-    background: transparent;
-    padding: 56px 0 32px 0;
-}
-
-.details-grid {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
-}
-
-.detail-card, .venue-info, .parking-info, .photos-note {
-    background: #fffaf3;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(194, 163, 98, 0.12);
-    border: 1.5px solid #e2c799;
-    margin-bottom: 18px;
-    padding: 18px 22px;
-    min-width: 220px;
-    max-width: 300px;
-    text-align: center;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 24px;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    margin: 8px;
-    border: none;
-}
-
-.btn--primary {
-    background: linear-gradient(90deg, #f7ecd3 0%, #e2c799 100%);
-    color: #7a5c2e;
-    border: 1px solid #e2c799;
-}
-
-.btn--primary:hover {
-    background: #d4b06a;
-    color: #fff;
-}
-
-.btn--secondary {
-    background: #fffbe6;
-    color: #bfa76a;
-    border: 1px solid #e2c799;
-}
-
-.btn--secondary:hover {
-    background: #e2c799;
-    color: #fff;
-}
-
-.directions-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-}
-
-/* Sparkles */
-.sparkle {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: radial-gradient(circle, #ffe7b7 0%, #fffbe6 80%, transparent 100%);
-    border-radius: 50%;
-    opacity: 0;
-    animation: sparkle 2s linear forwards;
-    pointer-events: none;
-}
-
-@keyframes sparkle {
-    0%, 100% { opacity: 0; }
-    10%, 90% { opacity: 1; }
-}
-
-.footer {
-    background: #fffbe6;
-    color: #bfa76a;
-    text-align: center;
-    padding: 18px 0 8px 0;
-    font-size: 1.1rem;
-    border-top: 1.5px solid #e2c799;
-    margin-top: 48px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .invitation-book {
-        flex-direction: column;
-        max-width: 340px;
-    }
-    .invitation-page {
-        width: 100%;
-        padding: 22px;
-    }
-    .details-grid {
-        flex-direction: column;
-        gap: 12px;
-        align-items: center;
-    }
-}
+    font
