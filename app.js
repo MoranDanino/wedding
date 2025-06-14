@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // --- INITIALIZATION ---
     function init() {
         initCountdown();
         initMusicControls();
@@ -8,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         initSparkles();
     }
 
-    // --- COUNTDOWN TIMER ---
     function initCountdown() {
         const weddingDate = new Date('2026-06-05T11:45:00').getTime();
 
@@ -34,11 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCountdown();
     }
 
-    // --- BACKGROUND MUSIC CONTROLS ---
     function initMusicControls() {
         const music = document.getElementById('background-music');
         const musicBtn = document.getElementById('music-btn');
-        const musicIcon = document.getElementById('music-icon');
         if (!music || !musicBtn) return;
         let isPlaying = false;
 
@@ -56,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- GOOGLE CALENDAR INTEGRATION ---
     function initCalendarIntegration() {
         const calendarBtn = document.getElementById('google-calendar-btn');
         if (!calendarBtn) return;
@@ -68,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 title: 'החתונה של מורן ואור',
                 location: 'Kahi resort, השיטה 5, עמק חפר',
                 description: 'נשמח לחגוג איתכם את היום המיוחד שלנו!',
-                startTime: '20260605T114500', // YYYYMMDDTHHMMSS
+                startTime: '20260605T114500',
                 endTime: '20260605T170000'
             };
 
@@ -77,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- SMOOTH SCROLL FOR NAVIGATION ---
     function initSmoothScroll() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -90,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- SPARKLES ANIMATION ---
     function initSparkles() {
         function createSparkle() {
             const sparkle = document.createElement('div');
@@ -104,6 +97,5 @@ document.addEventListener('DOMContentLoaded', function() {
         setInterval(createSparkle, 500);
     }
 
-    // Run the main initialization function
     init();
 });
