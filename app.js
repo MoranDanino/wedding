@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initCountdown();
     initMusicControls();
     initCalendarIntegration();
+    initAppleCalendar();
     initSmoothScroll();
     initSparkles();
   }
@@ -78,6 +79,40 @@ document.addEventListener('DOMContentLoaded', function () {
         eventDetails.description
       )}&location=${encodeURIComponent(eventDetails.location)}`;
       window.open(calendarUrl, '_blank');
+    });
+  }
+
+  function initAppleCalendar() {
+    const appleBtn = document.getElementById('apple-calendar-btn');
+    if (!appleBtn) return;
+
+    appleBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      // יצירת קובץ ICS
+      const icsContent = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'BEGIN:VEVENT',
+        'SUMMARY:החתונה של מורן ואור',
+        'LOCATION:Kahi resort, השיטה 5, עמק חפר',
+        'DESCRIPTION:נשמח לחגוג איתכם את היום המיוחד שלנו!',
+        'DTSTART:20260605T114500',
+        'DTEND:20260605T170000',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      const blob = new Blob([icsContent], { type: 'text/calendar' });
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'wedding-moran-or.ics';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
     });
   }
 
