@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function initCountdown() {
-        // Set the date we're counting down to
         const weddingDate = new Date('2026-06-05T11:45:00').getTime();
 
         function updateCountdown() {
