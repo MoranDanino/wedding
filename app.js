@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         location: 'Kahi resort, השיטה 5, עמק חפר',
         description: 'נשמח לחגוג איתכם את היום המיוחד שלנו!',
         startTime: '20260605T114500',
-        endTime: '20260605T170000',
+        endTime: '20260605T183000',
       };
 
       const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
