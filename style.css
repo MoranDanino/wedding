@@ -63,99 +63,69 @@ body {
     overflow: hidden;
 }
 
-.invitation-animation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-}
-
-.invitation-book {
-    display: flex;
-    background: #fffbe6;
-    box-shadow: 0 8px 32px rgba(194, 163, 98, 0.25);
-    border-radius: 24px;
-    overflow: hidden;
-    animation: openBook 1.7s cubic-bezier(.77,0,.18,1) 1;
-    max-width: 700px;
-}
-
-@keyframes openBook {
-    0% { transform: scaleX(0.2) scaleY(0.8) rotateY(40deg); opacity: 0; }
-    60% { opacity: 1; }
-    100% { transform: scaleX(1) scaleY(1) rotateY(0deg); opacity: 1; }
-}
-
-.invitation-page {
-    width: 320px;
-    padding: 32px;
+.hero-center {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background: #fffaf3;
-}
-
-.invitation-page.left {
-    border-left: 2px solid #e2c799;
     align-items: center;
     justify-content: center;
-}
-
-.hero-image {
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(194, 163, 98, 0.15);
-    width: 220px;
-    height: auto;
-    display: block;
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
-}
-
-.invitation-page.right {
-    border-right: 2px solid #e2c799;
-    align-items: flex-start;
-    justify-content: center;
+    padding: 32px 0;
 }
 
 .hero-title {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     color: #bfa76a;
-    margin-bottom: 12px;
-    font-weight: 600;
+    margin-bottom: 16px;
+    font-weight: 700;
     letter-spacing: 2px;
     text-align: center;
-    width: 100%;
 }
 
-.countdown-container {
-    font-size: 1.2rem;
-    margin-bottom: 16px;
-    color: #a98d54;
-    background: #fff7e0;
-    border-radius: 12px;
-    padding: 10px 18px;
-    box-shadow: 0 2px 8px rgba(194, 163, 98, 0.10);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    direction: rtl;
+.countdown-block {
+    margin-bottom: 18px;
     text-align: center;
     width: 100%;
 }
 
 .countdown-label {
-    font-weight: 500;
+    font-weight: 600;
     color: #bfa76a;
-    margin-left: 8px;
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+    display: block;
+}
+
+.countdown-row {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #a98d54;
+    background: #fff7e0;
+    border-radius: 14px;
+    padding: 10px 22px;
+    box-shadow: 0 2px 8px rgba(194, 163, 98, 0.10);
+    display: inline-block;
+    margin-top: 4px;
+    letter-spacing: 1px;
 }
 
 .countdown-number {
-    font-weight: 600;
     color: #d4b06a;
+    margin: 0 2px;
+}
+
+.hero-image {
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(194, 163, 98, 0.18);
+    width: 240px;
+    height: auto;
+    margin: 22px 0 16px 0;
+    display: block;
 }
 
 .wedding-date, .wedding-location {
-    margin: 0 0 10px 0;
+    margin: 0 0 8px 0;
     font-size: 1.1rem;
     color: #7a5c2e;
     text-align: center;
@@ -163,7 +133,7 @@ body {
 }
 
 .music-controls {
-    margin-top: 12px;
+    margin-top: 14px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -174,11 +144,12 @@ body {
     color: #7a5c2e;
     border: none;
     border-radius: 24px;
-    padding: 10px 24px;
-    font-size: 1rem;
+    padding: 10px 28px;
+    font-size: 1.1rem;
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(194, 163, 98, 0.14);
     transition: background 0.2s;
+    font-weight: 600;
 }
 .music-btn.playing {
     background: #d4b06a;
@@ -186,4 +157,142 @@ body {
 }
 
 .section-title {
-    font
+    font-size: 2rem;
+    color: #bfa76a;
+    margin-bottom: 24px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.details-section, .directions-section {
+    background: transparent;
+    padding: 56px 0 32px 0;
+}
+
+.details-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.detail-card, .info-box {
+    background: #fffaf3;
+    border-radius: 22px;
+    box-shadow: 0 4px 20px rgba(194, 163, 98, 0.18);
+    border: 2.5px solid #e2c799;
+    margin-bottom: 18px;
+    padding: 22px 28px;
+    min-width: 220px;
+    max-width: 320px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 28px 0 0 0;
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    border-radius: 26px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    margin: 12px;
+    border: none;
+}
+
+.btn--primary {
+    background: linear-gradient(90deg, #f7ecd3 0%, #e2c799 100%);
+    color: #7a5c2e;
+    border: 2.5px solid #e2c799;
+    font-size: 1.4rem;
+    font-weight: 700;
+    box-shadow: 0 4px 16px rgba(194, 163, 98, 0.18);
+    padding: 22px 54px;
+}
+
+.btn--primary:hover {
+    background: #d4b06a;
+    color: #fff;
+}
+
+.btn--big {
+    font-size: 1.5rem;
+    padding: 26px 60px;
+}
+
+.btn--direction {
+    background: linear-gradient(90deg, #ffe7b7 0%, #e2c799 100%);
+    color: #7a5c2e;
+    border: 2.5px solid #bfa76a;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin: 10px;
+    box-shadow: 0 4px 16px rgba(194, 163, 98, 0.18);
+    padding: 18px 38px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn--direction:hover {
+    background: #d4b06a;
+    color: #fff;
+}
+
+.directions-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.footer {
+    background: #fffbe6;
+    color: #bfa76a;
+    text-align: center;
+    padding: 18px 0 8px 0;
+    font-size: 1.1rem;
+    border-top: 1.5px solid #e2c799;
+    margin-top: 48px;
+}
+
+/* נצנצים */
+.sparkle-background {
+    position: absolute;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+.sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #ffe7b7 0%, #fffbe6 80%, transparent 100%);
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkle 2s linear forwards;
+    pointer-events: none;
+}
+@keyframes sparkle {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+}
+
+@media (max-width: 900px) {
+    .details-grid {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    .hero-center {
+        padding: 18px 0;
+    }
+}
