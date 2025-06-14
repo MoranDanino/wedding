@@ -57,10 +57,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  function initCalendarIntegration() {
-    const calendarBtn = document.getElementById('google-calendar-btn');
-    if (!calendarBtn) return;
 
+  function initCalendarIntegration() {
+  const calendarBtn = document.getElementById('google-calendar-btn');
+  const appleBtn = document.getElementById('apple-calendar-btn');
+  if (calendarBtn) {
     calendarBtn.addEventListener('click', function (e) {
       e.preventDefault();
 
@@ -80,6 +81,59 @@ document.addEventListener('DOMContentLoaded', function () {
       window.open(calendarUrl, '_blank');
     });
   }
+
+  if (appleBtn) {
+    appleBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const icsContent = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'BEGIN:VEVENT',
+        'SUMMARY:החתונה של מורן ואור',
+        'DESCRIPTION:נשמח לחגוג איתכם את היום המיוחד שלנו!',
+        'LOCATION:Kahi resort, השיטה 5, עמק חפר',
+        'DTSTART:20260605T114500',
+        'DTEND:20260605T170000',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      const blob = new Blob([icsContent], { type: 'text/calendar' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'wedding-moran-or.ics';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+  }
+}
+
+  // function initCalendarIntegration() {
+  //   const calendarBtn = document.getElementById('google-calendar-btn');
+  //   if (!calendarBtn) return;
+
+  //   calendarBtn.addEventListener('click', function (e) {
+  //     e.preventDefault();
+
+  //     const eventDetails = {
+  //       title: 'החתונה של מורן ואור',
+  //       location: 'Kahi resort, השיטה 5, עמק חפר',
+  //       description: 'נשמח לחגוג איתכם את היום המיוחד שלנו!',
+  //       startTime: '20260605T114500',
+  //       endTime: '20260605T170000',
+  //     };
+
+  //     const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+  //       eventDetails.title
+  //     )}&dates=${eventDetails.startTime}/${eventDetails.endTime}&details=${encodeURIComponent(
+  //       eventDetails.description
+  //     )}&location=${encodeURIComponent(eventDetails.location)}`;
+  //     window.open(calendarUrl, '_blank');
+  //   });
+  // }
 
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
