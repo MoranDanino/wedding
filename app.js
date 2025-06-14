@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'DESCRIPTION:נשמח לחגוג איתכם את היום המיוחד שלנו!',
         'LOCATION:Kahi resort, השיטה 5, עמק חפר',
         'DTSTART:20260605T114500',
-        'DTEND:20260605T170000',
+        'DTEND:20260605T183000',
         'END:VEVENT',
         'END:VCALENDAR'
       ].join('\r\n');
