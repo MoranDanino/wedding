@@ -211,11 +211,14 @@ body {
   font-size: 1.1rem;
 }
 
-.action-buttons {
+.action-buttons,
+.calendar-actions {
   display: flex;
   justify-content: center;
+  gap: 18px;
   margin: 28px 0 0 0;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -228,6 +231,7 @@ body {
   transition: background 0.2s, color 0.2s;
   margin: 12px;
   border: none;
+  text-align: center;
 }
 
 .btn--primary {
@@ -242,6 +246,21 @@ body {
 
 .btn--primary:hover {
   background: #d4b06a;
+  color: #fff;
+}
+
+.btn--apple {
+  background: linear-gradient(90deg, #fffbe6 0%, #f7ecd3 100%);
+  color: #7a5c2e;
+  border: 2.5px solid #e2c799;
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(194, 163, 98, 0.12);
+  padding: 22px 54px;
+}
+
+.btn--apple:hover {
+  background: #e2c799;
   color: #fff;
 }
 
