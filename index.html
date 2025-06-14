@@ -25,7 +25,7 @@
             <h1 class="hero-title">מורן ואור מתחתנים</h1>
             <div class="countdown-block">
                 <div class="countdown-label">הספירה לאחור:</div>
-                <div class="countdown-row">
+                <div class="countdown-row" id="countdown-row">
                     <span id="days" class="countdown-number">0</span> ימים,
                     <span id="hours" class="countdown-number">0</span> שעות,
                     <span id="minutes" class="countdown-number">0</span> דקות,
@@ -33,9 +33,73 @@
                 </div>
             </div>
             <img src="IMG_4816.jpeg" alt="מורן ואור" class="hero-image"/>
-            <p class="wedding-date">יום שישי, 5 ביוני 2026</p>
+            <p class="wedding-date">יום חמישי, 5 ביוני 2026</p>
             <p class="wedding-location">Kahi resort, השיטה 5, עמק חפר</p>
             <div class="music-controls">
                 <button id="music-btn" class="music-btn">
                     <span id="music-icon">🎵</span> השמע מוזיקה
                 </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="details" class="details-section">
+            <div class="container">
+                <h2 class="section-title">פרטי האירוע</h2>
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <h3>תאריך</h3>
+                        <p>יום חמישי, 5 ביוני 2026</p>
+                    </div>
+                    <div class="detail-card">
+                        <h3>שעה</h3>
+                        <p>קבלת פנים וחופה: 11:45</p>
+                    </div>
+                    <div class="detail-card">
+                        <h3>מקום</h3>
+                        <p>Kahi resort, השיטה 5, עמק חפר</p>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <a href="#" id="google-calendar-btn" class="btn btn--primary btn--big">הוספה ליומן</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="directions" class="directions-section">
+            <div class="container">
+                <h2 class="section-title">איך מגיעים?</h2>
+                <div class="directions-content">
+                    <div class="venue-info info-box">
+                        <h3>Kahi resort</h3>
+                        <p>השיטה 5, עמק חפר</p>
+                    </div>
+                    <div class="directions-buttons">
+                        <a href="https://waze.com/ul?ll=32.33963000,34.89885000&navigate=yes" target="_blank" class="btn btn--direction">ניווט עם Waze</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Kahi+resort+emek+hefer" target="_blank" class="btn btn--direction">ניווט עם Google Maps</a>
+                    </div>
+                    <div class="parking-info info-box">
+                        <h4>חניה</h4>
+                        <p>חניה זמינה בשטח האולם וברחובות הסמוכים</p>
+                    </div>
+                    <div class="photos-note info-box">
+                        <h4>תמונות מהאירוע</h4>
+                        <p>קישור לגלריית התמונות מהחתונה יתווסף כאן לאחר האירוע</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 | מורן ואור | נבנה באהבה ❤️</p>
+    </footer>
+
+    <audio id="background-music" loop>
+        <source src="adoreyou.mp3" type="audio/mpeg">
+        הדפדפן שלך אינו תומך באלמנט האודיו.
+    </audio>
+    <script src="app.js"></script>
+</body>
+</html>
