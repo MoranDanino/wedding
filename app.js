@@ -1,30 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
     // --- INITIALIZATION ---
-    // This function runs when the page is fully loaded and ready.
     function init() {
         initCountdown();
         initMusicControls();
-        initBlessingForm();
         initCalendarIntegration();
         initSmoothScroll();
-        // initMobileMenu(); // If you add a mobile menu toggle
+        initSparkles();
     }
 
     // --- COUNTDOWN TIMER ---
     function initCountdown() {
-        const countdownElement = document.getElementById('countdown');
-        if (!countdownElement) return;
-
         const weddingDate = new Date('2026-06-05T11:45:00').getTime();
 
-        const updateCountdown = () => {
+        function updateCountdown() {
             const now = new Date().getTime();
             const distance = weddingDate - now;
 
             if (distance < 0) {
-                countdownElement.innerHTML = '<div class="countdown-item" style="grid-column: 1 / -1;">היום הגדול הגיע!</div>';
-                clearInterval(interval);
+                document.getElementById('days').innerText = 0;
+                document.getElementById('hours').innerText = 0;
+                document.getElementById('minutes').innerText = 0;
+                document.getElementById('seconds').innerText = 0;
                 return;
             }
 
@@ -32,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
-        };
+        }
 
-        const interval = setInterval(updateCountdown, 1000);
+        setInterval(updateCountdown, 1000);
         updateCountdown();
     }
 
@@ -43,9 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const music = document.getElementById('background-music');
         const musicBtn = document.getElementById('music-btn');
         const musicIcon = document.getElementById('music-icon');
-
         if (!music || !musicBtn) return;
-        
         let isPlaying = false;
 
         musicBtn.addEventListener('click', () => {
@@ -62,54 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- BLESSING FORM AND DISPLAY ---
-    function initBlessingForm() {
-        const form = document.getElementById('blessing-form');
-        const displayContainer = document.getElementById('blessings-display');
-        const list = document.getElementById('blessings-list');
-        const BLESSINGS_KEY = 'weddingBlessings';
-
-        if (!form || !list) return;
-
-        // Load existing blessings from localStorage
-        const savedBlessings = JSON.parse(localStorage.getItem(BLESSINGS_KEY)) || [];
-
-        function renderBlessings() {
-            if (savedBlessings.length > 0) {
-                displayContainer.style.display = 'block';
-                list.innerHTML = '';
-                savedBlessings.forEach(b => {
-                    const item = document.createElement('div');
-                    item.className = 'blessing-item';
-                    item.innerHTML = `<p class="blessing-author">${escapeHTML(b.name)}</p><p class="blessing-text">${escapeHTML(b.text)}</p>`;
-                    list.appendChild(item);
-                });
-            }
-        }
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nameInput = document.getElementById('blessing-name');
-            const textInput = document.getElementById('blessing-text');
-
-            const newBlessing = {
-                name: nameInput.value,
-                text: textInput.value
-            };
-
-            savedBlessings.push(newBlessing);
-            localStorage.setItem(BLESSINGS_KEY, JSON.stringify(savedBlessings));
-            
-            renderBlessings();
-            
-            // Clear form and show a success message
-            form.reset();
-            alert('הברכה נשלחה בהצלחה, תודה רבה!');
-        });
-        
-        renderBlessings();
-    }
-
     // --- GOOGLE CALENDAR INTEGRATION ---
     function initCalendarIntegration() {
         const calendarBtn = document.getElementById('google-calendar-btn');
@@ -117,17 +63,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         calendarBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             const eventDetails = {
-                title: 'החתונה של [שם הכלה] ו[שם החתן]',
+                title: 'החתונה של מורן ואור',
                 location: 'Kahi resort, השיטה 5, עמק חפר',
                 description: 'נשמח לחגוג איתכם את היום המיוחד שלנו!',
                 startTime: '20260605T114500', // YYYYMMDDTHHMMSS
-                endTime: '20260605T170000' // Adjust end time as needed
+                endTime: '20260605T170000'
             };
 
             const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventDetails.title)}&dates=${eventDetails.startTime}/${eventDetails.endTime}&details=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}`;
-            
             window.open(calendarUrl, '_blank');
         });
     }
@@ -137,24 +82,26 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
     }
-    
-    // --- UTILITY FUNCTION ---
-    function escapeHTML(str) {
-        return str.replace(/[&<>"']/g, function(match) {
-            return {
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                '"': '&quot;',
-                "'": '&#39;'
-            }[match];
-        });
+
+    // --- SPARKLES ANIMATION ---
+    function initSparkles() {
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.animationDuration = (1 + Math.random() * 2) + 's';
+            document.querySelector('.sparkle-background').appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 3000);
+        }
+        setInterval(createSparkle, 500);
     }
 
     // Run the main initialization function
