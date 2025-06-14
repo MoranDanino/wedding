@@ -1,594 +1,224 @@
-/* General Styles from Perplexity's base CSS */
-:root {
-    /* Base colors and fonts */
-    --color-background: rgba(252, 252, 249, 1);
-    --color-surface: rgba(255, 255, 253, 1);
-    --color-text-base: rgba(19, 52, 59, 1);
-    --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    
-    /* Custom Wedding Theme Palette */
-    --wedding-gold: #daa520;
-    --wedding-champagne: #f7e7ce;
-    --wedding-cream: #f5f5dc;
-    --wedding-white: #ffffff;
-    --wedding-text: #2c2c2c;
-    --wedding-text-light: #666;
-    --wedding-accent: #b8860b;
-    --wedding-shadow: rgba(218, 165, 32, 0.1);
-    --wedding-gradient: linear-gradient(135deg, var(--wedding-champagne), var(--wedding-accent));
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: 'Rubik', 'Assistant', var(--font-family-base);
-    direction: rtl;
-    background-color: var(--wedding-white);
-    color: var(--wedding-text);
+    font-family: 'Rubik', 'Assistant', sans-serif;
+    background: linear-gradient(135deg, #fffbe6 0%, #f7ecd3 100%);
+    color: #7a5c2e;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    min-height: 100vh;
 }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Navigation Bar */
 .navbar {
-    position: fixed;
+    background: rgba(255, 251, 230, 0.95);
+    box-shadow: 0 2px 12px rgba(194, 163, 98, 0.08);
+    padding: 0.5rem 0;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--wedding-champagne);
-    padding: 0;
+    z-index: 100;
 }
 
 .nav-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
 .nav-logo {
     font-size: 1.5rem;
+    color: #bfa76a;
     font-weight: 600;
-    color: var(--wedding-accent);
     text-decoration: none;
+    letter-spacing: 2px;
 }
 
 .nav-menu {
-    display: flex;
     list-style: none;
+    display: flex;
+    gap: 24px;
     margin: 0;
     padding: 0;
-    gap: 2rem;
 }
 
 .nav-link {
-    color: var(--wedding-text);
+    color: #7a5c2e;
     text-decoration: none;
+    font-size: 1.1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 0.5rem 0;
-    position: relative;
+    transition: color 0.2s;
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: var(--wedding-accent);
+.nav-link.active, .nav-link:hover {
+    color: #bfa76a;
 }
 
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--wedding-gradient);
-}
-
-.menu-toggle {
-    display: none; /* Hidden on desktop */
-}
-
-/* Hero Section */
 .hero {
     position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: transparent;
     overflow: hidden;
-    padding-top: 60px; /* Space for navbar */
-    background-color: var(--wedding-champagne);
 }
 
-.hero-background {
+.sparkle-background {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
 }
 
-.slideshow-container {
-    width: 100%;
-    height: 100%;
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-}
-
-.slide.active {
-    opacity: 1;
-}
-
-.hero-content {
-    text-align: center;
-    color: var(--wedding-text);
+.invitation-animation {
+    position: relative;
     z-index: 2;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.invitation-book {
+    display: flex;
+    background: #fffbe6;
+    box-shadow: 0 8px 32px rgba(194, 163, 98, 0.25);
+    border-radius: 24px;
+    overflow: hidden;
+    animation: openBook 1.7s cubic-bezier(.77,0,.18,1) 1;
+    max-width: 700px;
+}
+
+@keyframes openBook {
+    0% { transform: scaleX(0.2) scaleY(0.8) rotateY(40deg); opacity: 0; }
+    60% { opacity: 1; }
+    100% { transform: scaleX(1) scaleY(1) rotateY(0deg); opacity: 1; }
+}
+
+.invitation-page {
+    width: 320px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fffaf3;
+}
+
+.invitation-page.left {
+    border-left: 2px solid #e2c799;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(194, 163, 98, 0.15);
+    width: 220px;
+    height: auto;
+}
+
+.invitation-page.right {
+    border-right: 2px solid #e2c799;
+    align-items: flex-start;
 }
 
 .hero-title {
-    font-family: 'Assistant', sans-serif;
-    font-size: 4rem;
-    font-weight: 300;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-    background: var(--wedding-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    color: var(--wedding-text);
-}
-
-.wedding-date {
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: var(--wedding-accent);
-    margin-bottom: 2rem;
-}
-
-/* Countdown Timer */
-.countdown-container {
-    margin: 2rem 0;
-}
-
-.countdown-title {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--wedding-text);
-    font-weight: 500;
-}
-
-.countdown {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.countdown-item {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    padding: 1rem 1.5rem;
-    min-width: 100px;
-    text-align: center;
-    box-shadow: 0 8px 32px var(--wedding-shadow);
-    border: 1px solid var(--wedding-champagne);
-}
-
-.countdown-number {
-    display: block;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
+    color: #bfa76a;
+    margin-bottom: 12px;
     font-weight: 600;
-    color: var(--wedding-accent);
+    letter-spacing: 2px;
+}
+
+.countdown-container {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: #a98d54;
+    background: #fff7e0;
+    border-radius: 12px;
+    padding: 10px 18px;
+    box-shadow: 0 2px 8px rgba(194, 163, 98, 0.10);
+    display: inline-block;
+    direction: rtl;
 }
 
 .countdown-label {
-    font-size: 1rem;
-    color: var(--wedding-text-light);
     font-weight: 500;
+    color: #bfa76a;
 }
 
-/* Music Controls */
+.countdown-number {
+    font-weight: 600;
+    color: #d4b06a;
+}
+
+.wedding-date, .wedding-location {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #7a5c2e;
+}
+
 .music-controls {
-    margin-top: 2rem;
+    margin-top: 12px;
 }
 
 .music-btn {
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid var(--wedding-champagne);
-    border-radius: 50px;
-    padding: 0.8rem 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    background: linear-gradient(90deg, #f7ecd3 0%, #e2c799 100%);
+    color: #7a5c2e;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 24px;
     font-size: 1rem;
-    color: var(--wedding-text);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(194, 163, 98, 0.14);
+    transition: background 0.2s;
 }
-
-.music-btn:hover {
-    background: var(--wedding-champagne);
-    transform: translateY(-2px);
-}
-
 .music-btn.playing {
-    background: var(--wedding-gradient);
-    color: white;
-    border-color: transparent;
-}
-
-
-/* General Section Styling */
-.details-section, .gifts-section, .directions-section {
-    padding: 5rem 0;
-    background: var(--wedding-white);
-}
-
-.gifts-section {
-    background-color: #fdfdfd;
+    background: #d4b06a;
+    color: #fff;
 }
 
 .section-title {
+    font-size: 2rem;
+    color: #bfa76a;
+    margin-bottom: 24px;
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 300;
-    margin-bottom: 3rem;
-    color: var(--wedding-text);
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: var(--wedding-gradient);
-}
-
-
-/* Details Section */
-.details-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.detail-card {
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 8px 32px var(--wedding-shadow);
-    border: 1px solid var(--wedding-champagne);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.detail-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px var(--wedding-shadow);
-}
-
-.detail-card h3 {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: var(--wedding-accent);
-}
-
-.detail-card p {
-    color: var(--wedding-text-light);
-    font-size: 1.1rem;
-    margin: 0;
-}
-
-/* Buttons */
-.btn {
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.btn--primary {
-    background: var(--wedding-gradient);
-    color: white;
-}
-
-.btn--primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px var(--wedding-shadow);
-}
-
-.btn--secondary {
-    background: white;
-    color: var(--wedding-accent);
-    border: 2px solid var(--wedding-champagne);
-}
-
-.btn--secondary:hover {
-    background: var(--wedding-champagne);
-    transform: translateY(-2px);
-}
-
-.btn--full-width {
-    width: 100%;
-}
-
-.action-buttons {
-    display: flex;
-    justify-content: center;
-}
-
-/* Blessings (Gifts) Section */
-.gifts-content {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.gifts-intro {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--wedding-text-light);
-    margin-bottom: 3rem;
-    line-height: 1.6;
-}
-
-.blessing-form {
-    background: white;
-    border-radius: 15px;
-    padding: 2.5rem;
-    margin-bottom: 3rem;
-    box-shadow: 0 8px 32px var(--wedding-shadow);
-    border: 1px solid var(--wedding-champagne);
-}
-
-.blessing-form h3 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    color: var(--wedding-accent);
-    text-align: center;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-control {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid var(--wedding-champagne);
-    border-radius: 10px;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: border-color 0.3s ease;
-    resize: vertical;
-    box-sizing: border-box;
-}
-
-.form-control:focus {
-    border-color: var(--wedding-accent);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.2);
-}
-
-/* Blessings Display */
-.blessings-display {
-    background: white;
-    border-radius: 15px;
-    padding: 2.5rem;
-    box-shadow: 0 8px 32px var(--wedding-shadow);
-    border: 1px solid var(--wedding-champagne);
-}
-
-.blessings-display h3 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    color: var(--wedding-accent);
-    text-align: center;
-}
-
-.blessings-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    max-height: 400px;
-    overflow-y: auto;
-    padding-right: 1rem;
-}
-
-.blessing-item {
-    background: #fafafa;
-    border-radius: 10px;
-    padding: 1.5rem;
-    border-right: 4px solid var(--wedding-accent);
-}
-
-.blessing-author {
     font-weight: 600;
-    color: var(--wedding-accent);
-    margin-bottom: 0.5rem;
 }
 
-.blessing-text {
-    color: var(--wedding-text-light);
-    line-height: 1.6;
-    margin: 0;
+.details-section, .directions-section {
+    background: transparent;
+    padding: 56px 0 32px 0;
 }
 
-/* Directions Section */
-.directions-content {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.venue-info {
-    margin-bottom: 2rem;
-}
-
-.venue-info h3 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: var(--wedding-accent);
-    margin-bottom: 0.5rem;
-}
-
-.venue-info p {
-    font-size: 1.2rem;
-    color: var(--wedding-text-light);
-    margin: 0;
-}
-
-.directions-buttons {
+.details-grid {
     display: flex;
+    gap: 24px;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
     flex-wrap: wrap;
+    margin-bottom: 24px;
 }
 
-.direction-btn {
-    min-width: 180px;
-}
-
-.parking-info,
-.photos-note {
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    box-shadow: 0 4px 16px var(--wedding-shadow);
-    border: 1px solid var(--wedding-champagne);
-}
-
-.parking-info h4,
-.photos-note h4 {
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: var(--wedding-accent);
-    margin-bottom: 0.5rem;
-    margin-top: 0;
-}
-
-.parking-info p,
-.photos-note p {
-    color: var(--wedding-text-light);
-    margin: 0;
-}
-
-/* Footer */
-.footer {
-    background: var(--wedding-text);
-    color: rgba(255, 255, 255, 0.8);
+.detail-card, .venue-info, .parking-info, .photos-note {
+    background: #fffaf3;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(194, 163, 98, 0.12);
+    border: 1.5px solid #e2c799;
+    margin-bottom: 18px;
+    padding: 18px 22px;
+    min-width: 220px;
+    max-width: 300px;
     text-align: center;
-    padding: 2rem 0;
-    font-size: 0.9rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-menu {
-        display: none; /* Will be handled by JS */
-    }
-
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0.5rem;
-    }
-    
-    .menu-toggle span {
-        width: 25px;
-        height: 3px;
-        background: var(--wedding-accent);
-        margin: 3px 0;
-        transition: 0.3s;
-    }
-
-    .hero-title {
-        font-size: 2.8rem;
-    }
-
-    .countdown {
-        gap: 1rem;
-    }
-
-    .countdown-item {
-        min-width: 80px;
-        padding: 1rem;
-    }
-
-    .countdown-number {
-        font-size: 2rem;
-    }
-    
-    .section-title {
-        font-size: 2.2rem;
-    }
-
-    .details-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .directions-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .direction-btn {
-        width: 100%;
-        max-width: 300px;
-    }
-}
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    margin: 8px;
